@@ -6,6 +6,8 @@ method=$3
 arg=$4
 
 criterion=$(echo $url | grep -E "^https://api.github.com/")
+echo debug
+echo $criterion
 [ -n "$criterion" ] || exit 1
 
 curl \
