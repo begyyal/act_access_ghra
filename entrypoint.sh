@@ -6,6 +6,11 @@ method=$3
 arg=$4
 
 criterion=$(echo $url | grep -E "^https://api.github.com/")
+
+echo debug
+echo $url
+echo $criterion
+
 if [ -z "$criterion" ]; then
   echo 'The url of inputs contains illegal domain.'
   exit 1
