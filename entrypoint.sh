@@ -5,12 +5,12 @@ url=$2
 method=$3
 arg=$4
 
+if [ -z $token -o -z $url -o -z $method -o ]; then
+  echo 'Required argument lacks.'
+  exit 1
+fi
+
 criterion=$(echo $url | grep -E "^https://api.github.com/")
-
-echo debug
-echo $url
-echo $criterion
-
 if [ -z "$criterion" ]; then
   echo 'The url of inputs contains illegal domain.'
   exit 1
