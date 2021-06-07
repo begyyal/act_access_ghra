@@ -1,0 +1,19 @@
+name: 'Access Github REST API'
+inputs:
+  token:
+    required: true
+  url:
+    required: true
+  method:
+    required: true
+  arg:
+    required: false
+    default: '{}'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.url }}
+    - ${{ inputs.method }}
+    - ${{ inputs.arg }}
