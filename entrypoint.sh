@@ -7,6 +7,7 @@ arg=$4
 
 criterion=$(echo $url | grep -E "^https://api.github.com/")
 echo debug
+echo $url
 echo $criterion
 [ -n "$criterion" ] || exit 1
 
