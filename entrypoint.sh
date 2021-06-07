@@ -5,8 +5,8 @@ url=$2
 method=$3
 arg=$4
 
-criterion=https://api.github.com/
-[ expr match $url "^$criterion" = ${#criterion} ] || exit 1
+criterion=$(echo $url | grep -E "^https://api.github.com/")
+[ -n "$criterion" ] || exit 1
 
 curl \
   -X $method \
