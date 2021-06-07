@@ -5,7 +5,7 @@ url=$2
 method=$3
 arg=$4
 
-[ $url =~ ^https://api.github.com/ ] || return -1
+[ $url =~ ^https://api.github.com/ ] || exit -1
 
 curl \
   -X $method \
