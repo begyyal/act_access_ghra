@@ -5,7 +5,8 @@ url=$2
 method=$3
 arg=$4
 
-[[ $url =~ ^https ]] || exit 1
+criterion=https://api.github.com/
+[ expr match $url "^$criterion" = ${#criterion} ] || exit 1
 
 curl \
   -X $method \
