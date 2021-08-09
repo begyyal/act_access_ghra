@@ -1,0 +1,25 @@
+{
+  "name": "act_access_ghra",
+  "version": "1.0.0",
+  "description": "Access Github REST API using the input values.",
+  "main": "main.js",
+  "scripts": {
+    "build": "ncc build --license LICENSE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/begyyal/act_access_ghra.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/begyyal/act_access_ghra/issues"
+  },
+  "homepage": "https://github.com/begyyal/act_access_ghra#readme",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {}
+}

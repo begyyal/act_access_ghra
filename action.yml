@@ -1,19 +1,33 @@
 name: 'Access Github REST API'
+description: 'Access Github REST API using the input values.'
+
 inputs:
-  token:
-    required: true
   url:
     required: true
+    description: >
+      A request endpoint including protocol and domain.
   method:
     required: true
-  arg:
+    description: >
+      Http method used in a request.
+  token:
     required: false
-    default: '{}'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+    default: ${{ github.token }}
+    description: >
+      Authorization token such as a github_token or PAT.
   args:
-    - ${{ inputs.token }}
-    - ${{ inputs.url }}
-    - ${{ inputs.method }}
-    - ${{ inputs.arg }}
+    required: false
+    default: ''
+    description: >
+      Please inputs with json format.
+      If http status is [GET], read key/value in this json as query params, otherwise as a body data.
+outputs:
+  status:
+    description: >
+      Http status of the api response.
+  data:
+    description: >
+      A data part of the api response.
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
